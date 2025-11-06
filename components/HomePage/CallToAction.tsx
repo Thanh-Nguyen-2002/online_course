@@ -7,11 +7,6 @@ export default function CallToAction() {
 
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.15)_0%,transparent_70%),radial-gradient(circle_at_70%_80%,rgba(249,115,22,0.15)_0%,transparent_70%)]"></div>
 
-            <div className="absolute inset-0 opacity-40">
-                <div className="absolute top-0 left-0 w-96 h-96 bg-[#6366F1] rounded-full mix-blend-screen filter blur-3xl opacity-60 animate-blob"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F97316] rounded-full mix-blend-screen filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
-            </div>
-
             <div className="relative z-10 max-w-3xl mx-auto px-6">
                 <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-linear-to-r from-[#6366F1] via-[#8B5CF6] to-[#F97316] bg-clip-text mb-6 leading-tight">
                     Sẵn sàng bứt phá sự nghiệp lập trình của bạn?
