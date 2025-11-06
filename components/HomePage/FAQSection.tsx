@@ -55,7 +55,7 @@ export default function FAQSection() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className={`rounded-2xl p-[1px] transition-all duration-300 ${
+                            className={`rounded-2xl p-px transition-all duration-300 ${
                                 openFAQ === index
                                 ? "bg-linear-to-r from-[#6366F1] to-[#F97316] shadow-[0_0_25px_rgba(99,102,241,0.25)]"
                                 : "bg-[#1E293B]"

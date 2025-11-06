@@ -155,19 +155,33 @@ export default function CurriculumPage() {
     return (
         <main className="min-h-screen bg-darkBg text-textLight">
             <CurriculumHeader />
-            <section className="container mx-auto px-4 py-16">
-                <h2 className="text-4xl font-bold text-center mb-12 text-textLight">
-                    Our Comprehensive Full-Stack Curriculum
-                </h2>
-                <div className="max-w-4xl mx-auto space-y-6">
-                    {curriculumData.map((moduleData, index) => (
-                        <CurriculumModule key={index} {...moduleData} moduleIndex={index} />
-                    ))}
+            <section className="relative py-24 overflow-hidden bg-[#0F172A]">
+
+                <div className="absolute inset-0 opacity-40">
+                    <div className="absolute top-20 left-20 w-96 h-96 bg-[#6366F1] rounded-full mix-blend-screen filter blur-2xl opacity-60 animate-blob"></div>
+                    <div className="absolute bottom-10 right-50 w-96 h-96 bg-[#F97316] rounded-full mix-blend-screen filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+                    <div className="absolute top-1/2 right-1/2 w-96 h-96 bg-[#6366F1] rounded-full mix-blend-screen 
+                        filter blur-3xl opacity-60 animate-blob transform translate-x-1/2 -translate-y-1/2">
+                    </div>
+                </div> 
+                
+                <div className="relative container mx-auto px-6">
+                    <h2 className="text-4xl font-extrabold text-center mb-16 leading-tight bg-linear-to-r from-[#6366F1] to-[#F97316] bg-clip-text text-transparent">
+                        Our Comprehensive Full-Stack Curriculum
+                    </h2>
+
+                    <div className="max-w-4xl mx-auto space-y-8">
+                        {curriculumData.map((moduleData, index) => (
+                            <CurriculumModule
+                                key={index}
+                                {...moduleData}
+                                moduleIndex={index}
+                            />
+                        ))}
+                    </div>
                 </div>
             </section>
-            <section className="">
-                <CallToAction />
-            </section>
+            <CallToAction />
         </main>
     );
 }

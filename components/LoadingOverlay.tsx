@@ -29,7 +29,7 @@ export default function LoadingOverlay({ onFinish }: LoadingOverlayProps) {
         <AnimatePresence>
             {visible && (
                 <motion.div
-                    className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white"
+                    className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-linear-to-br from-slate-900 via-gray-900 to-black text-white"
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8 }}

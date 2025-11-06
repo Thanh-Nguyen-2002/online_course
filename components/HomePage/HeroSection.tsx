@@ -1,4 +1,5 @@
 import { PlayCircle, GraduationCap } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
     return (
@@ -22,7 +23,10 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button className="bg-[#F97316] hover:bg-[#fb923c] text-white font-bold py-3 px-8 rounded-full shadow-lg transition 
                         duration-300 flex items-center gap-2 text-lg cursor-pointer">
-                        <PlayCircle size={24} /> Bắt đầu Free Preview
+                        <Link href="/curriculum" className="flex items-center gap-2">
+                            <PlayCircle size={24} /> Xem trước khóa học
+                        </Link>
+                        
                     </button>
                     <button className="bg-transparent border-2 border-[#6366F1] hover:border-[#8B5CF6] text-[#6366F1] cursor-pointer
                         hover:text-[#8B5CF6] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 flex items-center gap-2 text-lg">
