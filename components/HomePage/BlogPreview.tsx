@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Calendar, ChevronRight, User } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const blogPosts = [
     {
@@ -103,15 +104,19 @@ export default function BlogPreview() {
                 </div>
 
                 <div className="mt-16">
-                    <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-10 rounded-full shadow-[0_8px_30px_rgba(244,63,94,0.12)] transition-all duration-300 flex items-center gap-3 mx-auto text-lg">
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                            Xem Thêm Bài Viết
-                        </span>
-                        <ChevronRight
-                            size={22}
-                            className="group-hover:translate-x-1 transition-transform duration-300"
-                        />
-                    </button>
+                    <Link href="/blog">
+                        <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-10 rounded-full 
+                            shadow-[0_8px_30px_rgba(244,63,94,0.12)] transition-all duration-300 flex 
+                            items-center gap-3 mx-auto text-lg cursor-pointer">
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">
+                                Xem Thêm Bài Viết
+                            </span>
+                            <ChevronRight
+                                size={22}
+                                className="group-hover:translate-x-1 transition-transform duration-300"
+                            />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

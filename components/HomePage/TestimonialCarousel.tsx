@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Star, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const testimonials = [
     {
@@ -108,14 +109,16 @@ export default function TestimonialCarousel() {
                 </div>
 
                 <div className="mt-16">
-                    <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-8 
-                    rounded-full shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all duration-300 
-                    flex items-center gap-2 mx-auto text-lg">
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                            Đọc hơn 500+ đánh giá
-                        </span>
-                        <ChevronRight size={22} />
-                    </button>
+                    <Link href="/reviews" className="inline-block mb-6">
+                        <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-8 
+                        rounded-full shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all duration-300 
+                        flex items-center gap-2 mx-auto text-lg cursor-pointer">
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">
+                                Đọc hơn 500+ đánh giá
+                            </span>
+                            <ChevronRight size={22} />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

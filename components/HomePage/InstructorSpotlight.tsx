@@ -2,6 +2,7 @@
 
 import { Linkedin, Twitter, Github, ChevronRight, Star, Building2, Cog, Lightbulb } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function InstructorSpotlight() {
     return (
@@ -79,14 +80,16 @@ export default function InstructorSpotlight() {
                                 <Github size={28} />
                             </a>
                         </div>
-
-                        <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-8 rounded-full 
-                            shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all duration-300 flex items-center gap-2">
-                            <span className="group-hover:translate-x-1 transition-transform duration-300">
-                                Khám phá hồ sơ giảng viên
-                            </span>
-                            <ChevronRight size={22} className="group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
+                        <Link href="/instructors" className="inline-block">
+                            <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-8 rounded-full 
+                                shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all duration-300 flex items-center gap-2 cursor-pointer">
+                                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                                    Khám phá hồ sơ giảng viên
+                                </span>
+                                <ChevronRight size={22} className="group-hover:translate-x-1 transition-transform duration-300" />
+                            </button>
+                        </Link>
+                        
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 const faqs = [
     {
@@ -108,17 +109,19 @@ export default function FAQSection() {
                 </div>
 
                 <div className="mt-16">
-                    <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-10 
-                    rounded-full shadow-[0_0_25px_rgba(244,63,94,0.3)] transition-all duration-300 
-                    flex items-center gap-3 mx-auto text-lg">
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                            Xem Tất Cả Câu Hỏi
-                        </span>
-                        <ChevronRight
-                            size={22}
-                            className="group-hover:translate-x-1 transition-transform duration-300"
-                        />
-                    </button>
+                    <Link href="/faq">
+                        <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-10 
+                        rounded-full shadow-[0_0_25px_rgba(244,63,94,0.3)] transition-all duration-300 
+                        flex items-center gap-3 mx-auto text-lg cursor-pointer">
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">
+                                Xem Tất Cả Câu Hỏi
+                            </span>
+                            <ChevronRight
+                                size={22}
+                                className="group-hover:translate-x-1 transition-transform duration-300"
+                            />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

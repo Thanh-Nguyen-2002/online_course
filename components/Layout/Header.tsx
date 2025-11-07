@@ -2,21 +2,39 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Book } from "lucide-react";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const pathname = usePathname();
 
-    const linkClass =
-        "relative group text-[#1E293B]/80 hover:text-[#0EA5E9] font-medium text-lg transition duration-300 ease-in-out";
-    const underlineClass =
-        "absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-[#0EA5E9] to-[#0369A1] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out";
+    const links = [
+        ["Khóa học", "/curriculum"],
+        ["Giảng viên", "/instructors"],
+        ["Đánh giá", "/reviews"],
+        ["Blog", "/blog"],
+        ["FAQ", "/faq"],
+        ["Giới thiệu", "/about"],
+        ["Liên hệ", "/contact"],
+    ];
+
+    const linkClass = (href: string) =>
+        `relative group font-medium text-lg transition duration-300 ease-in-out ${
+        pathname === href
+            ? "text-[#0EA5E9]"
+            : "text-[#1E293B]/80 hover:text-[#0EA5E9]"
+        }`;
+
+    const underlineClass = (href: string) =>
+        `absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-[#0EA5E9] to-[#0369A1] origin-left 
+        scale-x-${pathname === href ? "100" : "0"} group-hover:scale-x-100 
+        transition-transform duration-300 ease-out`;
 
     return (
         <header className="bg-white/95 text-[#1E293B] shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-[#0EA5E9]/10 px-4">
             <div className="max-w-[1700px] mx-auto py-4 flex items-center justify-between">
-
                 <Link href="/" className="flex items-center space-x-2">
                     <Book className="h-9 w-9 text-[#0EA5E9]" strokeWidth={2.5} />
                     <span className="text-2xl font-extrabold tracking-tight text-[#1E293B]">
@@ -25,27 +43,19 @@ export default function Header() {
                 </Link>
 
                 <nav className="hidden md:flex space-x-8 items-center">
-                {[
-                    ["Khóa học", "/curriculum"],
-                    ["Giảng viên", "/instructors"],
-                    ["Đánh giá", "/reviews"],
-                    ["Blog", "/blog"],
-                    ["FAQ", "/faq"],
-                    ["Giới thiệu", "/about"],
-                    ["Liên hệ", "/contact"]
-                ].map(([title, href]) => (
-                    <Link key={href} href={href} className={linkClass}>
-                        {title}
-                        <span className={underlineClass}></span>
-                    </Link>
-                ))}
+                    {links.map(([title, href]) => (
+                        <Link key={href} href={href} className={linkClass(href)}>
+                            {title}
+                            <span className={underlineClass(href)}></span>
+                        </Link>
+                    ))}
 
-                <Link
-                    href="/register"
-                    className="ml-6 px-6 py-3 bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white rounded-full font-bold text-lg transition-all duration-300 ease-in-out transform hover:scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
-                >
-                    Đăng ký ngay
-                </Link>
+                    <Link
+                        href="/register"
+                        className="ml-6 px-6 py-3 bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white rounded-full font-bold text-lg transition-all duration-300 ease-in-out transform hover:scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
+                    >
+                        Đăng ký ngay
+                    </Link>
                 </nav>
 
                 <div className="md:hidden flex items-center">
@@ -68,20 +78,18 @@ export default function Header() {
                 } bg-white/95 pb-4 border-t border-[#0EA5E9]/10`}
             >
                 <div className="flex flex-col items-center space-y-4 pt-4">
-                    {[
-                        ["Khóa học", "/curriculum"],
-                        ["Giảng viên", "/instructor"],
-                        ["Đánh giá", "/testimonials"],
-                        ["Blog", "/blog"],
-                        ["FAQ", "/faq"],
-                    ].map(([title, href]) => (
+                    {links.map(([title, href]) => (
                         <Link
-                        key={href}
-                        href={href}
-                        onClick={toggleMenu}
-                        className="text-[#1E293B]/80 hover:text-[#0EA5E9] transition duration-300 ease-in-out text-lg font-medium"
+                            key={href}
+                            href={href}
+                            onClick={toggleMenu}
+                            className={`text-lg font-medium transition duration-300 ease-in-out ${
+                                pathname === href
+                                ? "text-[#0EA5E9]"
+                                : "text-[#1E293B]/80 hover:text-[#0EA5E9]"
+                            }`}
                         >
-                        {title}
+                            {title}
                         </Link>
                     ))}
 

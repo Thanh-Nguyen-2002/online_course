@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CallToAction() {
     return (
@@ -24,15 +25,19 @@ export default function CallToAction() {
                 </p>
 
                 <div className="relative inline-block">
-                    <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-4 px-12 rounded-full text-xl shadow-[0_0_25px_rgba(244,63,94,0.28)] transition-all duration-300 flex items-center gap-3 mx-auto">
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                            Đăng ký ngay hôm nay
-                        </span>
-                        <ArrowRight
-                            size={28}
-                            className="group-hover:translate-x-1 transition-transform duration-300"
-                        />
-                    </button>
+                    <Link href="register">
+                        <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-4 
+                            px-12 rounded-full text-xl shadow-[0_0_25px_rgba(244,63,94,0.28)] transition-all duration-300 
+                            flex items-center gap-3 mx-auto cursor-pointer">
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">
+                                Đăng ký ngay hôm nay
+                            </span>
+                            <ArrowRight
+                                size={28}
+                                className="group-hover:translate-x-1 transition-transform duration-300"
+                            />
+                        </button>
+                    </Link>
                 </div>
 
                 <p className="mt-8 text-sm text-[#1E293B]/70">
