@@ -38,7 +38,11 @@ export default function FAQSection() {
 
     return (
         <section className="relative py-12 bg-white text-[#1E293B] overflow-hidden">
-
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute -bottom-24 -left-16 w-104 h-104 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+                <div className="absolute -top-16 -right-12 w-[24rem] h-96 bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-88 h-88 bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-4000"></div>
+            </div>
             <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1E293B]">
                     Câu Hỏi Thường Gặp

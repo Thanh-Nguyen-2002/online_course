@@ -39,6 +39,12 @@ const blogPosts = [
 export default function BlogPreview() {
     return (
         <section className="relative py-14 bg-white text-[#1E293B] overflow-hidden">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-tr from-[#E0F2FE]/70 via-white to-[#FDE2E4]/70 opacity-60"></div>
+                <div className="absolute -bottom-24 -left-16 w-120 h-120 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+                <div className="absolute -top-20 -right-16 w-md h-112 bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-3000"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[24rem] h-96] bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-1500"></div>
+            </div>
             <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

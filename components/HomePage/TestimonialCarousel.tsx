@@ -34,7 +34,11 @@ const testimonials = [
 export default function TestimonialCarousel() {
     return (
         <section className="relative py-14 bg-white text-[#1E293B] overflow-hidden">
-
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute bottom-0 -left-20 w-md h-112 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div className="absolute top-0 -right-20 w-104 h-104 bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-88 h-88 bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            </div>
             <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}

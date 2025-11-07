@@ -3,6 +3,15 @@ import { ArrowRight } from "lucide-react";
 export default function CallToAction() {
     return (
         <section className="relative py-14 bg-white text-center overflow-hidden">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                    w-240 h-240 bg-[radial-linear(circle_at_center,_rgba(14,165,233,0.25),_rgba(244,63,94,0.15),_transparent)]bg-[radial-linear(circle_at_center,rgba(14,165,233,0.25),rgba(244,63,94,0.15),transparent)] 
+                    blur-3xl opacity-70 animate-pulse-slow"></div>
+                <div className="absolute bottom-0 -left-32 w-md h-112 bg-[#0EA5E9] rounded-full 
+                    mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+                <div className="absolute top-0 -right-32 w-md h-112 bg-[#F43F5E] rounded-full 
+                    mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+            </div>
 
             <div className="relative z-10 max-w-3xl mx-auto px-6">
                 <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-linear-to-r from-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent">

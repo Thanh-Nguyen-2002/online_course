@@ -41,6 +41,11 @@ export default function CourseCurriculumPreview() {
 
     return (
         <section className="relative py-14 bg-white text-[#1E293B] overflow-hidden">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute top-1/3 left-1/4 w-md h-md bg-[#6366F1] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div className="absolute top-2/3 right-1/3 w-104 h-104 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+                <div className="absolute bottom-0 left-1/2 w-100 h-100 bg-[#F97316] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+            </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6">
                 <div className="text-center mb-16">
@@ -55,7 +60,7 @@ export default function CourseCurriculumPreview() {
                     </p>
                 </div>
 
-                <div className="relative before:absolute before:inset-y-0 before:left-1/2 before:w-1 before:bg-gradient-to-b before:from-[#0EA5E9] before:via-[#0369A1] before:to-[#F43F5E] before:opacity-70">
+                <div className="relative before:absolute before:inset-y-0 before:left-1/2 before:w-1 before:bg-linear-to-b before:from-[#0EA5E9] before:via-[#0369A1] before:to-[#F43F5E] before:opacity-70">
                     {modules.map((module, index) => {
                         const isOpen = openModule === index;
                         const isLeft = index % 2 === 0;
