@@ -1,4 +1,5 @@
 import { Book, FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -6,10 +7,10 @@ export default function Footer() {
             <div className="max-w-[1700px] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
 
                 <div className="col-span-1 md:col-span-1">
-                    <a href="#" className="flex items-center space-x-2 mb-4">
+                    <Link href="/" className="flex items-center space-x-2 mb-4">
                         <Book className="h-10 w-10 text-[#0EA5E9]" strokeWidth={2} />
                         <span className="text-2xl font-bold text-white">CoursePro</span>
-                    </a>
+                    </Link>
                     <p className="text-gray-300 text-sm">
                         Nâng tầm kiến thức của bạn với các khóa học trực tuyến hàng đầu. Học hỏi mọi lúc, mọi nơi.
                     </p>
@@ -28,10 +29,10 @@ export default function Footer() {
                 <div className="col-span-1 md:col-span-1">
                     <h3 className="text-lg font-semibold text-white mb-4">Hỗ trợ</h3>
                     <ul className="space-y-2">
-                        <li><a href="#" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Câu hỏi thường gặp</a></li>
-                        <li><a href="#" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Liên hệ</a></li>
-                        <li><a href="#" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Điều khoản dịch vụ</a></li>
-                        <li><a href="#" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Chính sách bảo mật</a></li>
+                        <li><Link href="/faq" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Câu hỏi thường gặp</Link></li>
+                        <li><Link href="/contact" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Liên hệ</Link></li>
+                        <li><Link href="/terms" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Điều khoản dịch vụ</Link></li>
+                        <li><Link href="/privacy" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Chính sách bảo mật</Link></li>
                     </ul>
                 </div>
 

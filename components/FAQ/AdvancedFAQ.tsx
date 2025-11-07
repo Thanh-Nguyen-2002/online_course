@@ -84,77 +84,76 @@ export default function AdvancedFAQ() {
 
     return (
         <section className="relative py-24 bg-white text-[#1E293B] overflow-hidden">
-        {/* 🌈 Hiệu ứng nền động */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-            <div className="absolute top-1/3 left-[-10rem] w-[30rem] h-[30rem] bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
-            <div className="absolute bottom-1/4 right-[-10rem] w-[28rem] h-[28rem] bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
-            <div className="absolute top-1/2 left-1/2 w-[26rem] h-[26rem] bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute top-1/3 -left-40 w-120 h-120 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+                <div className="absolute bottom-1/4 -right-40 w-md h-112 bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+                <div className="absolute top-1/2 left-1/2 w-104 h-104 bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            </div>
 
-        {/* 🧠 Nội dung */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 leading-snug">
-            Câu Hỏi Thường Gặp – <span className="text-[#0EA5E9]">Học viên cần biết</span>
-            </h2>
-            <p className="text-lg text-[#1E293B]/70 text-center mb-16 max-w-3xl mx-auto">
-            Tất cả thông tin bạn cần trước khi bắt đầu hành trình Full-Stack Developer.
-            </p>
+            {/* 🧠 Nội dung */}
+            <div className="relative z-10 max-w-6xl mx-auto px-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 leading-snug">
+                Câu Hỏi Thường Gặp – <span className="text-[#0EA5E9]">Học viên cần biết</span>
+                </h2>
+                <p className="text-lg text-[#1E293B]/70 text-center mb-16 max-w-3xl mx-auto">
+                Tất cả thông tin bạn cần trước khi bắt đầu hành trình Full-Stack Developer.
+                </p>
 
-            {/* 🧩 Các nhóm chủ đề */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {faqCategories.map((cat, idx) => (
-                <div key={idx} className="bg-white/90 rounded-2xl shadow-lg border border-[#0EA5E9]/10 hover:border-[#0EA5E9]/30 hover:shadow-[0_0_40px_rgba(14,165,233,0.1)] transition-all duration-300 p-8">
-                <div className="flex items-center gap-3 mb-6">
-                    <cat.icon className="text-[#0EA5E9] w-7 h-7" />
-                    <h3 className="text-2xl font-semibold text-[#1E293B]">{cat.title}</h3>
-                </div>
+                {/* 🧩 Các nhóm chủ đề */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {faqCategories.map((cat, idx) => (
+                    <div key={idx} className="bg-white/90 rounded-2xl shadow-lg border border-[#0EA5E9]/10 hover:border-[#0EA5E9]/30 hover:shadow-[0_0_40px_rgba(14,165,233,0.1)] transition-all duration-300 p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                        <cat.icon className="text-[#0EA5E9] w-7 h-7" />
+                        <h3 className="text-2xl font-semibold text-[#1E293B]">{cat.title}</h3>
+                    </div>
 
-                {cat.questions.map((item, i) => {
-                    const id = `${idx}-${i}`;
-                    const open = openIndex === id;
-                    return (
-                    <motion.div key={i} className="mb-4 border-b border-[#0EA5E9]/10 pb-3">
-                        <div
-                        onClick={() => setOpenIndex(open ? null : id)}
-                        className="cursor-pointer flex justify-between items-center"
-                        >
-                        <p className="text-[#1E293B]/90 font-medium">{item.q}</p>
-                        <motion.div animate={{ rotate: open ? 180 : 0 }}>
-                            <ChevronDown size={20} className="text-[#0EA5E9]" />
-                        </motion.div>
-                        </div>
-
-                        <AnimatePresence>
-                        {open && (
-                            <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden text-[#1E293B]/70 mt-2 leading-relaxed"
+                    {cat.questions.map((item, i) => {
+                        const id = `${idx}-${i}`;
+                        const open = openIndex === id;
+                        return (
+                        <motion.div key={i} className="mb-4 border-b border-[#0EA5E9]/10 pb-3">
+                            <div
+                            onClick={() => setOpenIndex(open ? null : id)}
+                            className="cursor-pointer flex justify-between items-center"
                             >
-                            {item.a}
+                            <p className="text-[#1E293B]/90 font-medium">{item.q}</p>
+                            <motion.div animate={{ rotate: open ? 180 : 0 }}>
+                                <ChevronDown size={20} className="text-[#0EA5E9]" />
                             </motion.div>
-                        )}
-                        </AnimatePresence>
-                    </motion.div>
-                    );
-                })}
-                </div>
-            ))}
-            </div>
+                            </div>
 
-            {/* CTA dưới cùng */}
-            <div className="text-center mt-20">
-            <a
-                href="/contact"
-                className="group inline-flex items-center gap-2 bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-4 px-10 rounded-full shadow-[0_0_25px_rgba(244,63,94,0.3)] transition-all duration-300"
-            >
-                <HelpCircle size={22} className="group-hover:rotate-12 transition-transform duration-300" />
-                Vẫn còn thắc mắc? Liên hệ ngay
-            </a>
+                            <AnimatePresence>
+                            {open && (
+                                <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden text-[#1E293B]/70 mt-2 leading-relaxed"
+                                >
+                                {item.a}
+                                </motion.div>
+                            )}
+                            </AnimatePresence>
+                        </motion.div>
+                        );
+                    })}
+                    </div>
+                ))}
+                </div>
+
+                {/* CTA dưới cùng */}
+                <div className="text-center mt-20">
+                <a
+                    href="/contact"
+                    className="group inline-flex items-center gap-2 bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-4 px-10 rounded-full shadow-[0_0_25px_rgba(244,63,94,0.3)] transition-all duration-300"
+                >
+                    <HelpCircle size={22} className="group-hover:rotate-12 transition-transform duration-300" />
+                    Vẫn còn thắc mắc? Liên hệ ngay
+                </a>
+                </div>
             </div>
-        </div>
         </section>
     );
 }

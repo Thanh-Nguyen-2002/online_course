@@ -122,7 +122,7 @@ export default function CurriculumModule({
                                         hover:shadow-[0_0_30px_rgba(14,165,233,0.2)] 
                                         hover:border-[#0EA5E9]/30 transition-all duration-500">
                                         <div className="relative">
-                                            <div className="absolute inset-0 blur-md bg-gradient-to-r from-[#0EA5E9] to-[#F43F5E] opacity-50 rounded-full"></div>
+                                            <div className="absolute inset-0 blur-md bg-linear-to-r from-[#0EA5E9] to-[#F43F5E] opacity-50 rounded-full"></div>
                                             <Briefcase
                                                 size={42}
                                                 className="text-[#F43F5E] relative z-10"
