@@ -1,5 +1,3 @@
-// app/curriculum/page.tsx
-
 import CurriculumHeader from "@/components/Curriculum/CurriculumHeader";
 import CurriculumModule from "@/components/Curriculum/CurriculumModule";
 import CallToAction from "@/components/HomePage/CallToAction";
@@ -153,21 +151,23 @@ export default function CurriculumPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-darkBg text-textLight">
+        <main className="min-h-screen bg-white text-[#1E293B]">
             <CurriculumHeader />
-            <section className="relative py-24 overflow-hidden bg-[#0F172A]">
+            <section className="relative py-24 overflow-hidden">
+                 <div className="absolute inset-0 z-0 overflow-hidden">
+                    {/* Ánh sáng mờ trái */}
+                    <div className="absolute top-1/3 -left-40 w-[32rem] h-[32rem] bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+                    {/* Ánh sáng mờ phải */}
+                    <div className="absolute bottom-1/4 -right-40 w-[30rem] h-[30rem] bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+                    {/* Ánh sáng trung tâm hồng cam nhẹ */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[26rem] h-[26rem] bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-                <div className="absolute inset-0 opacity-40">
-                    <div className="absolute top-20 left-20 w-96 h-96 bg-[#6366F1] rounded-full mix-blend-screen filter blur-2xl opacity-60 animate-blob"></div>
-                    <div className="absolute bottom-10 right-50 w-96 h-96 bg-[#F97316] rounded-full mix-blend-screen filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
-                    <div className="absolute top-1/2 right-1/2 w-96 h-96 bg-[#6366F1] rounded-full mix-blend-screen 
-                        filter blur-3xl opacity-60 animate-blob transform translate-x-1/2 -translate-y-1/2">
-                    </div>
-                </div> 
-                
+                    {/* Gradient phủ nhẹ để mềm nền */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#E0F2FE]/60 to-white opacity-70"></div>
+                </div>
                 <div className="relative container mx-auto px-6">
-                    <h2 className="text-4xl font-extrabold text-center mb-16 leading-tight bg-linear-to-r from-[#6366F1] to-[#F97316] bg-clip-text text-transparent">
-                        Our Comprehensive Full-Stack Curriculum
+                    <h2 className="text-4xl font-bold text-center mb-16 leading-tight text-black">
+                        Lộ Trình Học Full-Stack Toàn Diện
                     </h2>
 
                     <div className="max-w-4xl mx-auto space-y-8">
