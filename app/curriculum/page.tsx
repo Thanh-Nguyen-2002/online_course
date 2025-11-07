@@ -155,15 +155,11 @@ export default function CurriculumPage() {
             <CurriculumHeader />
             <section className="relative py-24 overflow-hidden">
                  <div className="absolute inset-0 z-0 overflow-hidden">
-                    {/* Ánh sáng mờ trái */}
-                    <div className="absolute top-1/3 -left-40 w-[32rem] h-[32rem] bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
-                    {/* Ánh sáng mờ phải */}
-                    <div className="absolute bottom-1/4 -right-40 w-[30rem] h-[30rem] bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
-                    {/* Ánh sáng trung tâm hồng cam nhẹ */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[26rem] h-[26rem] bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+                    <div className="absolute top-1/3 -left-40 w-lg h-128 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+                    <div className="absolute bottom-1/4 -right-40 w-120 h-120 bg-[#8B5CF6] rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-104 h-104 bg-[#F43F5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-                    {/* Gradient phủ nhẹ để mềm nền */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#E0F2FE]/60 to-white opacity-70"></div>
+                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#E0F2FE]/60 to-white opacity-70"></div>
                 </div>
                 <div className="relative container mx-auto px-6">
                     <h2 className="text-4xl font-bold text-center mb-16 leading-tight text-black">

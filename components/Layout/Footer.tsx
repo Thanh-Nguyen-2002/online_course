@@ -20,8 +20,8 @@ export default function Footer() {
                     <h3 className="text-lg font-semibold text-white mb-4">Khám phá</h3>
                     <ul className="space-y-2">
                         <li><a href="/about" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Về chúng tôi</a></li>
-                        <li><a href="curriculum" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Khóa học</a></li>
-                        <li><a href="#" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Giảng viên</a></li>
+                        <li><a href="/curriculum" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Khóa học</a></li>
+                        <li><a href="/instructors" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Giảng viên</a></li>
                         <li><a href="#" className="text-gray-300 hover:text-[#0EA5E9] transition-colors duration-200 text-sm">Blog</a></li>
                     </ul>
                 </div>

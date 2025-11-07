@@ -27,7 +27,7 @@ export default function Header() {
                 <nav className="hidden md:flex space-x-8 items-center">
                 {[
                     ["Khóa học", "/curriculum"],
-                    ["Giảng viên", "/instructor"],
+                    ["Giảng viên", "/instructors"],
                     ["Đánh giá", "/testimonials"],
                     ["Blog", "/blog"],
                     ["FAQ", "/faq"],
