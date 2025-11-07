@@ -28,8 +28,8 @@ export default function Header() {
         }`;
 
     const underlineClass = (href: string) =>
-        `absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-[#0EA5E9] to-[#0369A1] origin-left 
-        scale-x-${pathname === href ? "100" : "0"} group-hover:scale-x-100 
+        `absolute left-0 bottom-0 w-full h-0.5  origin-left 
+        ${pathname === href ? "bg-gradient-to-r from-[#0EA5E9] to-[#0369A1]" : ""} group-hover:scale-x-100 
         transition-transform duration-300 ease-out`;
 
     return (
