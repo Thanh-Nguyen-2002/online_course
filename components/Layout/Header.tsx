@@ -28,7 +28,7 @@ export default function Header() {
                 {[
                     ["Khóa học", "/curriculum"],
                     ["Giảng viên", "/instructors"],
-                    ["Đánh giá", "/testimonials"],
+                    ["Đánh giá", "/reviews"],
                     ["Blog", "/blog"],
                     ["FAQ", "/faq"],
                     ["Giới thiệu", "/about"],
