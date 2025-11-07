@@ -37,14 +37,13 @@ export default function FAQSection() {
         setOpenFAQ(openFAQ === index ? null : index);
 
     return (
-        <section className="relative py-24 bg-[#0F172A] text-[#E2E8F0] overflow-hidden border-t border-0.5 border-[#6366F1]/20">
-            {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.12)_0%,transparent_70%),radial-gradient(circle_at_30%_80%,rgba(249,115,22,0.1)_0%,transparent_70%)]"></div> */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,114,22,0.1)_0%,transparent_70%),radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.1)_0%,transparent_70%)]"></div>
+        <section className="relative py-12 bg-white text-[#1E293B] overflow-hidden">
+
             <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-                <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1E293B]">
                     Câu Hỏi Thường Gặp
                 </h2>
-                <p className="text-lg text-[#94A3B8] mb-14">
+                <p className="text-lg text-[#1E293B]/70 mb-14">
                     Giải đáp mọi thắc mắc trước khi bạn bắt đầu hành trình học tập.
                 </p>
 
@@ -55,52 +54,59 @@ export default function FAQSection() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className={`rounded-2xl p-px transition-all duration-300 ${
+                            className={`rounded-2xl p-px transition-all duration-300 border border-gray-200 shadow-sm ${
                                 openFAQ === index
-                                ? "bg-linear-to-r from-[#6366F1] to-[#F97316] shadow-[0_0_25px_rgba(99,102,241,0.25)]"
-                                : "bg-[#1E293B]"
+                                ? " shadow-[0_0_25px_rgba(14,165,233,0.25)]"
+                                : "bg-white"
                             }`}
                         >
-                        <div
-                            onClick={() => toggleFAQ(index)}
-                            className="cursor-pointer bg-[#1E293B] rounded-2xl px-6 py-5 flex justify-between items-center hover:bg-[#1E293B]/90 transition-all duration-300"
-                        >
-                            <h3 className="text-lg md:text-xl font-semibold text-[#E2E8F0]">
-                                {faq.question}
-                            </h3>
-                            <motion.div
-                                animate={{
-                                    rotate: openFAQ === index ? 90 : 0,
-                                }}
-                                transition={{ duration: 0.3 }}
-                                className="text-[#6366F1]"
+                            <div
+                                onClick={() => toggleFAQ(index)}
+                                className={`cursor-pointer rounded-2xl px-6 py-5 flex justify-between items-center 
+                                transition-all duration-300 ${
+                                    openFAQ === index 
+                                    ? "bg-white/95" 
+                                    : "bg-white hover:bg-gray-50"
+                                }`}
                             >
-                                <ChevronRight size={24} />
-                            </motion.div>
-                        </div>
-
-                        <AnimatePresence initial={false}>
-                            {openFAQ === index && (
+                                <h3 className="text-lg md:text-xl font-semibold text-[#1E293B]">
+                                    {faq.question}
+                                </h3>
                                 <motion.div
-                                    key="content"
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: "auto" }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    transition={{ duration: 0.4 }}
-                                    className="overflow-hidden bg-[#0F172A]/50 rounded-b-2xl"
+                                    animate={{
+                                        rotate: openFAQ === index ? 90 : 0,
+                                    }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-[#0EA5E9]"
                                 >
-                                    <div className="px-6 pt-4 pb-6 border-t border-[#6366F1]/30 text-[#94A3B8] leading-relaxed">
-                                        {faq.answer}
-                                    </div>
+                                    <ChevronRight size={24} />
                                 </motion.div>
-                            )}
-                        </AnimatePresence>
+                            </div>
+
+                            <AnimatePresence initial={false}>
+                                {openFAQ === index && (
+                                    <motion.div
+                                        key="content"
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: "auto" }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        transition={{ duration: 0.4 }}
+                                        className="overflow-hidden bg-gray-50/80 rounded-b-2xl"
+                                    >
+                                        <div className="px-6 pt-4 pb-6 border-t border-[#0EA5E9]/10 text-[#1E293B]/70 leading-relaxed">
+                                            {faq.answer}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
                     ))}
                 </div>
 
                 <div className="mt-16">
-                    <button className="group bg-[#6366F1] hover:bg-[#8B5CF6] text-white font-bold py-3 px-10 rounded-full shadow-[0_0_25px_rgba(99,102,241,0.4)] transition-all duration-300 flex items-center gap-3 mx-auto text-lg">
+                    <button className="group bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold py-3 px-10 
+                    rounded-full shadow-[0_0_25px_rgba(244,63,94,0.3)] transition-all duration-300 
+                    flex items-center gap-3 mx-auto text-lg">
                         <span className="group-hover:translate-x-1 transition-transform duration-300">
                             Xem Tất Cả Câu Hỏi
                         </span>
