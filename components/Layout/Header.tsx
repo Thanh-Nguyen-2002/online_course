@@ -31,6 +31,7 @@ export default function Header() {
                     ["Đánh giá", "/testimonials"],
                     ["Blog", "/blog"],
                     ["FAQ", "/faq"],
+                    ["Giới thiệu", "/about"],
                     ["Liên hệ", "/contact"]
                 ].map(([title, href]) => (
                     <Link key={href} href={href} className={linkClass}>
